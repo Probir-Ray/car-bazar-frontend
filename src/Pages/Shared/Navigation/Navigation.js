@@ -16,7 +16,7 @@ const Navigation = () => {
                     <Nav.Link as={HashLink} to="/home#products">Products</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#reviews">Reviews</Nav.Link>
                     <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
-                    <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>            
