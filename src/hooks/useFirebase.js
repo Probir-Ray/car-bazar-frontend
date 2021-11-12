@@ -8,18 +8,21 @@ firebaseInitialize();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
     // User registration method.
     const userRegistration = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
+      setIsLoading(true);
+      createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+            setAuthError('');
           })
           .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-          });
+            setAuthError(error.message);
+          })
+          .finally(() => setIsLoading(false));
     }
 
     // User Observer method
@@ -30,36 +33,44 @@ const useFirebase = () => {
             } else {
               setUser({});
             }
+            setIsLoading(false);
           });
           return () => unsubscribe;
     }, []);
 
 
     // User login method
-    const userLogin = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
+    const userLogin = (email, password, location, history) => {
+      setIsLoading(true);
+      signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+          const destination = location?.state?.from || '/';
+          history.replace(destination);
+          setAuthError('');
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
+          setAuthError(error.message);
+        })
+        .finally(() => setIsLoading(false));
     }
 
 
 
     // Sign out user method
     const logout = () => {
+        setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful.
           }).catch((error) => {
             // An error happened.
-          });
+          })
+          .finally(() => setIsLoading(false));
     }
 
     return {
         user,
+        isLoading,
+        authError,
         userRegistration,
         userLogin,
         logout
