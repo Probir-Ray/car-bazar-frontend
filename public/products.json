@@ -1,0 +1,31 @@
+[
+	{
+		"id": 1,
+		"name": "TESLA ROADSTER 2021",
+		"img": "https://cutt.ly/0TphsCL",
+		"desc": "​The quickest car in the world, with record-setting acceleration, range and performance. As an all-electric supercar, Roadster maximizes the potential of aerodynamic engineering—with record-setting performance and efficiency.",
+		"price": 2030500
+	},
+	{
+		"id": 2,
+		"name": "BMW i8",
+		"img": "https://cutt.ly/0TphoMB",
+		"desc": "​Hybrid sports cars are increasingly common thanks to electricity's performance-enhancing qualities, but the 2020 BMW i8 is more about looking fast than going fast.",
+		"price": 2500000
+	},
+	{
+		"id": 3,
+		"name": "Ford Mustang",
+		"img": "https://cutt.ly/TTphSg7",
+		"desc": "​Hybrid sports cars are increasingly common thanks to electricity's performance-enhancing qualities, but the 2020 BMW i8 is more about looking fast than going fast.",
+		"price": 2000000
+	},
+	{
+		"id": 4,
+		"name": "Ford Mustang",
+		"img": "https://cutt.ly/TTphSg7",
+		"desc": "​Hybrid sports cars are increasingly common thanks to electricity's performance-enhancing qualities, but the 2020 BMW i8 is more about looking fast than going fast.",
+		"price": 1500000
+	}
+
+]

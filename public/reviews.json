@@ -1,0 +1,31 @@
+[
+	{
+		"id": 1,
+		"name": "Loren Jackson",
+		"quote": "The dealer has been an absolute pleasure to deal with, not only did he give me a great discount, he has followed up on every aspect of the deal with efficiency and that extra mile of customer experience - so glad I used carwow! ",
+		"img": "https://i.ibb.co/SVgCXM7/mechanic-01.jpg",
+		"location": "Ontario, Canada"
+	},
+    {
+		"id": 2,
+		"name": "Peter Parker",
+		"quote": "We were confident with carwow because all the financial transactions are directly with the main dealer, it is no different to having walked into the showroom, just cheaper and less hassle. Thank you Car Bazar.",
+		"img": "https://i.ibb.co/s5NRZ8j/mechanic-03.jpg",
+		"location": "Newyork, USA"
+	},
+    {
+		"id": 3,
+		"name": "Donald Macclond",
+		"quote": "Car Bazar redefines new car purchasing for the internet age. You get to buy exactly what you want at the best possible price without the risk or hassle associated with brokers or main dealer sales staff. The dealer even offered to deliver the car to the door but we were happy to drop into the showroom.",
+		"img": "https://i.ibb.co/4N2xBPr/mechanic-05.jpg",
+		"location": "London, UK"
+	},
+    {
+		"id": 4,
+		"name": "Sadman Hasan",
+		"quote": "There's no pressure. Plenty of thinking time to review offers and compare them against other dealers. Rather than seeking out the best price, you ask the best price to come to you. Its in the dealers interests to give you their best price up front.",
+		"img": "https://i.ibb.co/4N2xBPr/mechanic-05.jpg",
+		"location": "London, UK"
+	}
+
+]
