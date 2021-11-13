@@ -4,7 +4,9 @@ import Product from '../../Home/Product/Product';
 const AllCar = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=> {
-        fetch('products.json').then(res => res.json()).then(data => setProducts(data));
+        fetch('products.json')
+        .then(res => res.json())
+        .then(data => setProducts(data));
     }, [])
     return (
         <div id='products' className='container-fluid bg-gray my-5 pt-3 pb-2'>

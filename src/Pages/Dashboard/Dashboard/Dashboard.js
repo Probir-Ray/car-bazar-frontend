@@ -35,6 +35,7 @@ import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Button from '@restart/ui/esm/Button';
 import AllOrders from '../AllOrders/AllOrders';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 240;
 
@@ -168,6 +169,9 @@ function Dashboard(props) {
           </AdminRoute>
           <AdminRoute path={`${path}/allOrder`}>
             <AllOrders></AllOrders>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
+            <ManageProducts></ManageProducts>
           </AdminRoute>
           <Route path={`${path}/addReview`}>
             <AddReview></AddReview>

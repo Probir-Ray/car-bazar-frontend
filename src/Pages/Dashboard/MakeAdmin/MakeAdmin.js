@@ -28,7 +28,7 @@ const MakeAdmin = () => {
     return (
         <div>
             <h3 className="my-5">Make an Admin</h3>
-            {success && <Alert severity="success">This is a success alert — check it out!</Alert>}
+            {success && <Alert severity="success">Admin add successfully</Alert>}
             <form onSubmit={handleAdmin}>
                 <TextField 
                 sx={{ width: '50%' }}
