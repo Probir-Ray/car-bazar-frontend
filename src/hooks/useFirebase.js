@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import firebaseInitialize from '../Pages/Login/Login/Firebase/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 
 
 // Initialize: Firebase app
@@ -13,11 +13,24 @@ const useFirebase = () => {
     const auth = getAuth();
 
     // User registration method.
-    const userRegistration = (email, password) => {
+    const userRegistration = (email, password, name, history) => {
       setIsLoading(true);
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             setAuthError('');
+            const newUser = {email, displayName: name}
+            setUser(newUser);
+            
+            // new user store in database
+            saveUser(email, name);
+
+            // After registered send name to firebase
+            updateProfile(auth.currentUser, {
+              displayName: name
+            }).then(() => {
+            }).catch((error) => {
+            });
+            history.replace('./');
           })
           .catch((error) => {
             setAuthError(error.message);
@@ -65,6 +78,18 @@ const useFirebase = () => {
             // An error happened.
           })
           .finally(() => setIsLoading(false));
+    }
+
+    const saveUser = (email, displayName) => {
+      const user = {email, displayName};
+      fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      .then()
     }
 
     return {

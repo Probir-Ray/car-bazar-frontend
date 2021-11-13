@@ -18,11 +18,16 @@ const Navigation = () => {
                     <Nav.Link as={HashLink} to="/home#products">Products</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#reviews">Reviews</Nav.Link>
                     <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+                    {user?.email && <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>}
                     {
-                        user?.email ? 
+                        user?.email ?  
                         <Button onClick={logout} variant="primary">Logout</Button> :
                         <Nav.Link as={Link} to="/login">Login</Nav.Link>
                     }
+                    <Navbar.Text>
+                        &nbsp;&nbsp; {user?.displayName}
+                    </Navbar.Text>
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>            

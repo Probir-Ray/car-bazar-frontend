@@ -12,7 +12,7 @@ const Product = (props) => {
                 <h2>Price: {price}</h2>
             </div>
             <div className="card-footer">
-                <Link to={`/product/${id}`}><button className="btn btn-outline-white">Purchase</button></Link>
+                <Link to={`/purchase/${id}`}><button className="btn btn-outline-white">Purchase</button></Link>
             </div>
         </div>
     );

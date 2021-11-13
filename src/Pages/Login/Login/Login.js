@@ -57,8 +57,6 @@ const Login = () => {
             {
                 isLoading && <Spinner animation="grow" variant="info" />
             }
-            <p>Or</p>
-            <button className="btn btn-danger py-2">Google Sign In</button>
             <br/>
             <br/>
             <p>No Account? <Link to='/register'>Register here</Link></p>
