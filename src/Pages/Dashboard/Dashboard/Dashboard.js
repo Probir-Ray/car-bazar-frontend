@@ -30,11 +30,13 @@ import {
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddReview from '../AddReview/AddReview';
+import Pay from '../Pay/Pay';
+import MyOrders from '../MyOrders/MyOrders';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const {user} = useAuth();
+  const {user, admin} = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -47,9 +49,14 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-      <Link to={`${url}`}>Dashboard</Link>
-      <Link to={`${url}/makeAdmin`}>Make Admin</Link>
-      <Link to={`${url}/addReview`}>Add Review</Link>
+      <ul>
+        <li><Link to={`${url}`}>Dashboard</Link></li>
+        {admin && <li><Link to={`${url}/makeAdmin`}>Make Admin</Link></li>}
+        <li><Link to={`${url}/pay`}>Pay</Link></li>
+        <li><Link to={`${url}/myOrders`}>My Orders</Link></li>
+        <li><Link to={`${url}/addReview`}>Review</Link></li>
+      </ul>
+      
       <List>
         {['Pay', 'My Orders'].map((text, index) => (
           <ListItem button key={text}>
@@ -144,8 +151,14 @@ function Dashboard(props) {
           <Route path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </Route>
-          <Route path={`${path}/AddReview`}>
+          <Route path={`${path}/addReview`}>
             <AddReview></AddReview>
+          </Route>
+          <Route path={`${path}/pay`}>
+            <Pay></Pay>
+          </Route>
+          <Route path={`${path}/myOrders`}>
+            <MyOrders></MyOrders>
           </Route>
         </Switch>
       </Box>
