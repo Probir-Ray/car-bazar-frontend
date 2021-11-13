@@ -16,7 +16,7 @@ useEffect(()=> {
             <h3 className="text-white my-4">Reviews</h3>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {
-                    reviews.map(review => <Review key={review.id} review={review}></Review>)
+                    reviews.map(review => <Review key={review._id} review={review}></Review>)
                 }
             </div>
         </div>

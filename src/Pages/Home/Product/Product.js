@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-    const {id, name, img, desc, price} = props.product;
+    const {_id, name, img, desc, price} = props.product;
     return (
         <div className='card card-default bg-outline-success text-white text-center'>
             <img style={{height: '300px'}} src={img} alt={name} />
@@ -12,7 +12,7 @@ const Product = (props) => {
                 <h2>Price: {price}</h2>
             </div>
             <div className="card-footer">
-                <Link to={`/purchase/${id}`}><button className="btn btn-outline-white">Purchase</button></Link>
+                <Link to={`/purchase/${_id}`}><button className="btn btn-outline-white">Purchase</button></Link>
             </div>
         </div>
     );

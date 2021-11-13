@@ -9,11 +9,11 @@ const Purchase = () => {
     const {purchaseId} = useParams();
     console.log(purchaseId);
     const [product, setProduct] = useState({});
-    // const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const {user} = useAuth();
 
     useEffect(()=> {
-        const url = `http://localhost:3000/purchase/${purchaseId}`;
+        const url = `http://localhost:5000/purchase/${purchaseId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data));
@@ -25,20 +25,20 @@ const Purchase = () => {
         const status = false;
         data.status = status;
 
-        // fetch('https://lit-hamlet-13017.herokuapp.com/orders', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        // .then(res => res.json())
-        // .then(result => {
-        //     if(result.insertedId) {
-        //         alert('Order process Successfully');
-        //         reset();
-        //     }
-        // })
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result.insertedId) {
+                alert('Order processing');
+                reset();
+            }
+        })
     }
 
     return (
@@ -57,8 +57,8 @@ const Purchase = () => {
             </div>
 
             <div className="w-75 mx-auto my-4 py-4">
-                {/* <h3 className="text-center">Booking Information</h3>
-                <form onSubmit={handleSubmit(onSubmit)} className="row g-3 w-75 mx-auto mt-2 mb-4">
+                <h3 className="text-center">Booking Information</h3>
+                <form onSubmit={handleSubmit(onSubmit)} className="row g-3 mx-auto mt-2 mb-4" style={{width: '90%'}}>
                     <div className="col-md-12">
                         <input placeholder="Name" className="form-control" defaultValue={user.displayName} {...register("name")} />
                     </div>
@@ -77,7 +77,7 @@ const Purchase = () => {
                     </div>
                     
                         <input type="submit" className="form-control btn btn-primary"/>
-                </form>                      */}
+                </form>                     
             </div>
             <Footer/>
         </>
