@@ -24,7 +24,6 @@ import {
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
   } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
@@ -32,11 +31,15 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddReview from '../AddReview/AddReview';
 import Pay from '../Pay/Pay';
 import MyOrders from '../MyOrders/MyOrders';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Button from '@restart/ui/esm/Button';
+import AllOrders from '../AllOrders/AllOrders';
+import AddProduct from '../AddProduct/AddProduct';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const {user, admin} = useAuth();
+  const {user, logout, admin} = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -51,10 +54,19 @@ function Dashboard(props) {
       <Divider />
       <ul>
         <li><Link to={`${url}`}>Dashboard</Link></li>
+        {/* Admin Route */}
+        {admin && <li><Link to={`${url}/allOrder`}>Manage All Orders</Link></li>}
+        {admin && <li><Link to={`${url}/addProduct`}>Add A Product</Link></li>}
         {admin && <li><Link to={`${url}/makeAdmin`}>Make Admin</Link></li>}
-        <li><Link to={`${url}/pay`}>Pay</Link></li>
-        <li><Link to={`${url}/myOrders`}>My Orders</Link></li>
-        <li><Link to={`${url}/addReview`}>Review</Link></li>
+        {admin && <li><Link to={`${url}/manageProducts`}>Manage Products</Link></li>}
+
+        {/* Simple User Route */}
+        { !admin && <li><Link to={`${url}/pay`}>Pay</Link></li>}
+        { !admin && <li><Link to={`${url}/myOrders`}>My Orders</Link></li>}
+        { !admin && <li><Link to={`${url}/addReview`}>Review</Link></li>}
+        {
+          user?.email && <Button onClick={logout} variant="primary">Logout</Button>
+        }
       </ul>
       
       <List>
@@ -148,9 +160,15 @@ function Dashboard(props) {
           <Route exact path={path}>
             <DashboardHome></DashboardHome>
           </Route>
-          <Route path={`${path}/makeAdmin`}>
+          <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </AdminRoute>
+          <AdminRoute path={`${path}/addProduct`}>
+            <AddProduct></AddProduct>
+          </AdminRoute>
+          <AdminRoute path={`${path}/allOrder`}>
+            <AllOrders></AllOrders>
+          </AdminRoute>
           <Route path={`${path}/addReview`}>
             <AddReview></AddReview>
           </Route>
