@@ -30,7 +30,7 @@ const ManageProducts = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.deletedCount > 0) {
-                    alert('Deleted successfully');
+                    alert('Product Deleted successfully');
                     const restOfProduct = products.filter(product => product._id !== id);
                     setProducts(restOfProduct);
                 }
@@ -55,14 +55,14 @@ const ManageProducts = () => {
                     <TableBody>
                     {products.map(product => (
                         <TableRow
-                        key={product._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                        <TableCell component="th" scope="row">{product.name}</TableCell>
-                        <TableCell align="left">{product.desc.slice(0, 120)}</TableCell>
-                        <TableCell align="center"><img style={{width: '50%'}} src={product.img}></img></TableCell>
-                        <TableCell align="center">{product.price}</TableCell>
-                        <TableCell align="center"><Button variant="contained" onClick={() => handleDeleteProduct(product._id)}>Delete</Button></TableCell>
+                            key={product._id}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                            <TableCell component="th" scope="row">{product.name}</TableCell>
+                            <TableCell align="left">{product.desc.slice(0, 120)}</TableCell>
+                            <TableCell align="center"><img style={{width: '50%'}} src={product.img}></img></TableCell>
+                            <TableCell align="center">{product.price}</TableCell>
+                            <TableCell align="center"><Button variant="contained" onClick={() => handleDeleteProduct(product._id)}>Delete</Button></TableCell>
                         </TableRow>
                     ))}
                     </TableBody>

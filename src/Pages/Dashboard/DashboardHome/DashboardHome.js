@@ -1,12 +1,9 @@
-import { Typography } from '@mui/material';
 import React from 'react';
 
 const DashboardHome = () => {
     return (
-        <div>
-            <Typography paragraph>
-                content
-            </Typography>
+        <div style={{marginTop: '18%'}}>
+            <h1 className="py-3 text-center">Welcome, to Car bazar Dashboard</h1>
         </div>
     );
 };
