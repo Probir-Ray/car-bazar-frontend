@@ -30,7 +30,7 @@ const CarBrand = () => {
 
     return (
         <div className="my-4">
-            <h3 className="my-5">Popular Brand</h3>
+            <h3 className="my-5 text-center">Popular Brand</h3>
             <div className="row row-cols-1 row-cols-md-2 g-4 mx-3">
                 {
                     brands.map(brand => <Brand key={brand.id} brand={brand}></Brand>)

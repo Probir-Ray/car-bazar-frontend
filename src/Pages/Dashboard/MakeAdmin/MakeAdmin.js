@@ -26,7 +26,7 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <div>
+        <div className="text-center mx-auto">
             <h3 className="my-5">Make an Admin</h3>
             {success && <Alert severity="success">Admin add successfully</Alert>}
             <form onSubmit={handleAdmin}>

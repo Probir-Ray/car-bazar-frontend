@@ -1,0 +1,24 @@
+.sitemap ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sitemap ul li {
+    display: inline-block;
+}
+
+.sitemap ul li a {
+    text-decoration: none;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 4px;
+    border-radius: 5px;
+}
+
+.sitemap ul li:hover a {
+    background-color: #fff;
+    color: #0d6efd;
+}

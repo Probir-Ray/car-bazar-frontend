@@ -17,7 +17,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <AuthProvider>
         <Router>
             <Switch>
@@ -27,9 +27,9 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <PrivateRoute path="/explore">
+              <Route path="/explore">
                 <Explore/>
-              </PrivateRoute>
+              </Route>
               <Route path="/login">
                 <Login/>
               </Route>

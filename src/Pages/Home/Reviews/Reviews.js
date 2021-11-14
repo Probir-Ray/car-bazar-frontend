@@ -13,7 +13,7 @@ useEffect(()=> {
 
     return (
         <div id="reviews" className='container-fluid bg-info my-5 py-5'>
-            <h3 className="text-white my-4">Reviews</h3>
+            <h3 className="text-white my-4 text-center">Reviews</h3>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {
                     reviews.map(review => <Review key={review._id} review={review}></Review>)
