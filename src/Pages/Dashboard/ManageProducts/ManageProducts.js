@@ -40,7 +40,7 @@ const ManageProducts = () => {
     
     return (
         <div>
-            <h3 className="text-center">Manage Products</h3>
+            <h3 className="text-center my-4">Manage Products</h3>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 550 }} aria-label="simple table">
                     <TableHead>

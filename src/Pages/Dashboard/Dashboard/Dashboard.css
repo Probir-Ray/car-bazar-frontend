@@ -16,7 +16,7 @@ a {
     border-bottom: 1px solid #ddd;
 }
 
-.sidebar > a, a:link, a:visited  {
+.sidebar a, .sidebar > a:link, .sidebar > a:visited  {
     padding: 20px 30px;
     text-decoration: none;
     color: #333;

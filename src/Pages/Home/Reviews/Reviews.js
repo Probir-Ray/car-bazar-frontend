@@ -12,7 +12,7 @@ useEffect(()=> {
 
 
     return (
-        <div id="reviews" className='container-fluid my-5 py-5' style={{backgroundColor: 'teal'}}>
+        <div id="reviews" className='container-fluid my-5 py-5' style={{backgroundColor: '#1976d2'}}>
             <h3 className="text-white my-4 py-3 text-center">Reviews</h3>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {

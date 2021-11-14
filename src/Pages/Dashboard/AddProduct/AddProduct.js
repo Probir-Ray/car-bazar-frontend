@@ -35,7 +35,7 @@ const AddProduct = () => {
 
     return (
         <div className='my-1 container text-center box-container'>
-            <h2 className='mb-4'>Add A Product</h2>
+            <h3 className="text-center my-3">Add A Product</h3>
             <form onSubmit={handleProduct} className="row g-3 mx-auto mt-2 mb-4" style={{width: '90%'}}>
                 <div className="col-md-12">
                     <input type="text" className="form-control" placeholder="Car Name" ref={nameRef}/>

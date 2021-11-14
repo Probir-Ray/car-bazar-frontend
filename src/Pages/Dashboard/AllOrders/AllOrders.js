@@ -36,7 +36,7 @@ const AllOrders = () => {
     
     return (
         <div>
-            <h3 className="text-center">Manage All Orders</h3>
+            <h3 className="text-center mt-5">Manage All Orders</h3>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 550 }} aria-label="simple table">
                     <TableHead>

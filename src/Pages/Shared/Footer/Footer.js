@@ -6,7 +6,7 @@ import { Nav } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='text-white py-4' style={{backgroundColor: 'teal'}}>
+        <div className='text-white py-4' style={{backgroundColor: '#1976d2'}}>
             <div className="container footer-top py-3 text-left">
                 <div className="row">
                     <div className="col-md-4 col-sm-6 p-3">
