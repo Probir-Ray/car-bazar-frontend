@@ -5,7 +5,7 @@ const Brand = (props) => {
     
     return (
         <div className="col col-md-3">
-            <div className="card bg-info p-4">
+            <div className="card p-4" style={{backgroundColor: 'tomato'}}>
                 <img style={{width: '100%'}} src={img} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title text-white">{name}</h5>

@@ -19,13 +19,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useAuth from '../../../hooks/useAuth';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch
-  } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddReview from '../AddReview/AddReview';
@@ -36,6 +30,7 @@ import Button from '@restart/ui/esm/Button';
 import AllOrders from '../AllOrders/AllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import './Dashboard.css';
 
 const drawerWidth = 240;
 
@@ -53,7 +48,7 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-      <ul>
+      <ul className="sidebar">
         <li><Link to='/'>Home</Link></li>
         <li><Link to={`${url}`}>Dashboard</Link></li>
         {/* Admin Route */}
@@ -67,30 +62,10 @@ function Dashboard(props) {
         { !admin && <li><Link to={`${url}/myOrders`}>My Orders</Link></li>}
         { !admin && <li><Link to={`${url}/addReview`}>Review</Link></li>}
         {
-          user?.email && <Button onClick={logout} variant="primary">Logout</Button>
+          user?.email && <li><Button onClick={logout} variant="primary">Logout</Button></li>
         }
       </ul>
       
-      <List>
-        {['Pay', 'My Orders'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <PaymentIcon /> : <ProductionQuantityLimitsIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <List>
-        {['Review', 'Logout'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <ReviewsIcon/> : <LogoutIcon/>}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 

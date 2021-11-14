@@ -17,7 +17,7 @@ const AllOrders = () => {
         fetch('http://localhost:5000/allOrder')
         .then(res => res.json())
         .then(data => setOrders(data));
-    }, [orders.status]);
+    }, []);
 
     const handleProductStatus = id => {
         const url = `http://localhost:5000/statusUpdate/${id}`;
@@ -30,6 +30,7 @@ const AllOrders = () => {
         .then(res => res.json())
         .then(data => {
             alert('Status update successfully');
+            window.location.reload();
         });
     }
     

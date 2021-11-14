@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     const img = {
         width: '100%',
-        height: '91vh',
+        height: '86vh',
         objectFit: "cover",
     }
     return (

@@ -9,7 +9,7 @@ const Navigation = () => {
     const {user, logout} = useAuth();
     return (
         <div>
-            <Navbar bg="info" variant="dark" sticky='top' collapseOnSelect expand="lg">
+            <Navbar style={{backgroundColor: 'teal'}} variant="dark" sticky='top' collapseOnSelect expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/">Car Bazar</Navbar.Brand>
                 <Navbar.Toggle />
