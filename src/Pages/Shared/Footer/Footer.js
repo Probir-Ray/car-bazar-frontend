@@ -11,25 +11,32 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-md-4 col-sm-6 p-3">
                         <h4>About Us</h4>
-                        <p>Car Bazar is fast growing car saller.</p>
+                        <p>Founded in 2015 in Dhaka city, Bangladesh is one of most popular Car Seller around the South Asia. Our goal is create a safer, smarter world in which people experience the joy of mobility.</p>
                         <ul>
                             <li>Phone: +88017-333666</li>
-                            <li>Address: Gulshan, Dhaka-1212</li>
+                            <li>Email: info@carbazar.com</li>
+                            <li>Head Office: Gulshan, Dhaka-1212</li>
+                            <li>Corporate Office: Segunbagicha, Dhaka</li>
+                            <li>Fax: +880-2-1179</li>
                         </ul>
                     </div>
                     <div className="col-md-4 col-sm-6 p-3 text-center">
-                        <h4 className="mb-3">Featured Location</h4>
+                        <h4 className="mb-3">Branch Office</h4>
                         <div className="single-post border-bottom py-2">
-                            <h6 className="bolder">Kakslauttanen Arctic Resort</h6>
-                            <div className="date italic">Puerto Vallarta, Mexico</div>
+                            <h6 className="bolder">Thamel, Kathmandu</h6>
+                            <div className="date italic">Nepal</div>
                         </div>
                         <div className="single-post border-bottom py-2">
-                            <h6 className="bolder">TreeHouse Villas</h6>
-                            <div className="date italic">Ko Yao, Thailand</div>
+                            <h6 className="bolder">Bilalabad, Karachi</h6>
+                            <div className="date italic">Pakistan</div>
                         </div>
                         <div className="single-post border-bottom py-2">
-                            <h6 className="bolder">Grand Miramar</h6>
-                            <div className="date italic">Puerto Vallarta, Mexico</div>
+                            <h6 className="bolder">Semtokha, Thimpu</h6>
+                            <div className="date italic">Bhutan</div>
+                        </div>
+                        <div className="single-post border-bottom py-2">
+                            <h6 className="bolder">Paharganj, New Delhi</h6>
+                            <div className="date italic">India</div>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-6 p-3 sitemap">
