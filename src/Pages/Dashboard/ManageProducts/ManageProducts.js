@@ -34,7 +34,7 @@ const ManageProducts = () => {
                     const restOfProduct = products.filter(product => product._id !== id);
                     setProducts(restOfProduct);
                 }
-            });            
+            });  
         }
     }
     

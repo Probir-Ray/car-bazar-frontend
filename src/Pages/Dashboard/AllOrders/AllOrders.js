@@ -17,7 +17,21 @@ const AllOrders = () => {
         fetch('http://localhost:5000/allOrder')
         .then(res => res.json())
         .then(data => setOrders(data));
-    }, []);
+    }, [orders.status]);
+
+    const handleProductStatus = id => {
+        const url = `http://localhost:5000/statusUpdate/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert('Status update successfully');
+        });
+    }
     
     return (
         <div>
@@ -44,8 +58,8 @@ const AllOrders = () => {
                         <TableCell align="center">{order.name}</TableCell>
                         <TableCell align="center">{order.address}, {order.city}</TableCell>
                         <TableCell align="center">{order.phone}</TableCell>
-                        <TableCell align="center">{!order.status && 'Pending'}</TableCell>
-                        <TableCell align="center"><Button variant="contained">Update</Button></TableCell>
+                        <TableCell align="center">{!order.status ? 'Pending' : 'shipped'}</TableCell>
+                        <TableCell align="center">{!order.status ? (<Button variant="contained" onClick={() => handleProductStatus(order._id)}>Pending</Button>) : 'Already shiped'}</TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
