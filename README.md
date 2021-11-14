@@ -1,9 +1,9 @@
 # Project Name: Car Bazar
 
-Deploy Link [Car Bazar Project](https://royal-tour-14c3e.web.app/).
+Deploy Link [Car Bazar Project](https://car-bazar-32120.web.app).
 
 ## Description:
-Car Bazar is a E-Commerce based website. Car selling is the main goal of this website. For this little bit functionality are add here; Customer can registration/Login, Add a review & Purchase product. Admin only add product, manage all product and manage all orders. A normal user can be admin, after approved from Admin.
+Car Bazar is a E-Commerce based website. Car selling is the main goal of this website. For this little bit functionality are add here; Customer can registration/Login, Add a review & Purchase product. Only Admin can added product, Manage all products and Manage all orders. A normal user can be admin, after approved from Admin.
 
 ## Features:
 - New and old car sales related website.
