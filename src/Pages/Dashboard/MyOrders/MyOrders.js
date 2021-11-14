@@ -20,7 +20,7 @@ const MyOrders = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setOrders(data));
-    }, []);
+    }, [email]);
 
 
     // Delete a product
@@ -58,7 +58,7 @@ const MyOrders = () => {
                 <Table sx={{ minWidth: 550 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Product ID</TableCell>
+                            <TableCell>Product</TableCell>
                             <TableCell align="center">Shipping Address</TableCell>
                             <TableCell align="center">Phone Number</TableCell>
                             <TableCell align="center">Order Status</TableCell>

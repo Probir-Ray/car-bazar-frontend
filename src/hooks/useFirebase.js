@@ -50,7 +50,7 @@ const useFirebase = () => {
             setIsLoading(false);
           });
           return () => unsubscribe;
-    }, []);
+    }, [auth]);
 
 
     // User login method

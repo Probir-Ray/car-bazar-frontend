@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { Nav } from 'react-bootstrap';
 

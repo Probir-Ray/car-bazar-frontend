@@ -17,7 +17,7 @@ const Purchase = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data));
-    }, []);
+    }, [purchaseId]);
 
     const onSubmit = data => {
         const id = product._id;
@@ -35,7 +35,7 @@ const Purchase = () => {
         .then(res => res.json())
         .then(result => {
             if(result.insertedId) {
-                alert('Order processing');
+                alert('Successfully booking');
                 reset();
             }
         })

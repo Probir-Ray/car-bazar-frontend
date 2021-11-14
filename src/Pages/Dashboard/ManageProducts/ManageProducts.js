@@ -60,7 +60,7 @@ const ManageProducts = () => {
                             >
                             <TableCell component="th" scope="row">{product.name}</TableCell>
                             <TableCell align="left">{product.desc.slice(0, 120)}</TableCell>
-                            <TableCell align="center"><img style={{width: '50%'}} src={product.img}></img></TableCell>
+                            <TableCell align="center"><img style={{width: '50%'}} src={product.img} alt={product.name}></img></TableCell>
                             <TableCell align="center">{product.price}</TableCell>
                             <TableCell align="center"><Button variant="contained" onClick={() => handleDeleteProduct(product._id)}>Delete</Button></TableCell>
                         </TableRow>

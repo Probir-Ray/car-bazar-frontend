@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
 import Brand from './Brand';
 
 const CarBrand = () => {
