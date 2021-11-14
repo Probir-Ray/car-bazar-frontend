@@ -54,6 +54,7 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
       <ul>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to={`${url}`}>Dashboard</Link></li>
         {/* Admin Route */}
         {admin && <li><Link to={`${url}/allOrder`}>Manage All Orders</Link></li>}
