@@ -14,13 +14,13 @@ const AllOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/allOrder')
+        fetch('https://desolate-gorge-65958.herokuapp.com/allOrder')
         .then(res => res.json())
         .then(data => setOrders(data));
     }, []);
 
     const handleProductStatus = id => {
-        const url = `http://localhost:5000/statusUpdate/${id}`;
+        const url = `https://desolate-gorge-65958.herokuapp.com/statusUpdate/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -44,7 +44,7 @@ const AllOrders = () => {
                         <TableCell>Product</TableCell>
                         <TableCell align="center">Order By</TableCell>
                         <TableCell align="center">Shipping Address</TableCell>
-                        <TableCell align="center">Phone Number</TableCell>
+                        <TableCell align="center">Phone</TableCell>
                         <TableCell align="center">Status</TableCell>
                         <TableCell align="center">Update Status</TableCell>
                     </TableRow>

@@ -13,7 +13,7 @@ const Purchase = () => {
     const {user} = useAuth();
 
     useEffect(()=> {
-        const url = `http://localhost:5000/purchase/${purchaseId}`;
+        const url = `https://desolate-gorge-65958.herokuapp.com/purchase/${purchaseId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data));
@@ -25,7 +25,7 @@ const Purchase = () => {
         const status = false;
         data.status = status;
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://desolate-gorge-65958.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

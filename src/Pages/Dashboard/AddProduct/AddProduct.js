@@ -14,7 +14,7 @@ const AddProduct = () => {
 
         const newProduct = {name, desc, img, price};
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://desolate-gorge-65958.herokuapp.com/products', {
             method:'POST',
             headers: {
                 'content-type': 'application/json'
